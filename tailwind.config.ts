@@ -99,12 +99,17 @@ export default {
           '0%': { transform: 'translate(0%, 0%)', opacity: '1' },
           '100%': { transform: 'translate(100%, 0%)', opacity: '0' },
         },
+        'logo-sway': {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(14px)' },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         'star-movement-bottom': 'star-movement-bottom linear infinite alternate',
         'star-movement-top': 'star-movement-top linear infinite alternate',
+        'logo-sway': 'logo-sway 1.5s ease-in-out infinite alternate',
       },
     },
   },

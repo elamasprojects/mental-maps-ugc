@@ -41,7 +41,13 @@ const SocialProofSection: React.FC = () => {
 
         {/* Logos Carousel Section */}
         <div>
-          <Logos3 heading="Empresas que confían en nosotros" />
+          <Logos3
+            heading={
+              <>
+                Algunas de las Empresas que <span className="gradient-text">confían en nosotros</span>
+              </>
+            }
+          />
         </div>
 
         {/* Examples Section (moved below carousel and redesigned) */}
