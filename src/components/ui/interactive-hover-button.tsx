@@ -4,10 +4,11 @@ import { cn } from "@/lib/utils";
 
 interface InteractiveHoverButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   text?: string;
+  showBullet?: boolean;
 }
 
 const InteractiveHoverButton = React.forwardRef<HTMLButtonElement, InteractiveHoverButtonProps>(
-  ({ text = "Button", className, ...props }, ref) => {
+  ({ text = "Button", showBullet = true, className, ...props }, ref) => {
     return (
       <button
         ref={ref}
@@ -24,7 +25,9 @@ const InteractiveHoverButton = React.forwardRef<HTMLButtonElement, InteractiveHo
           <span>{text}</span>
           <ArrowRight />
         </div>
-        <div className="absolute left-[20%] top-[40%] h-2 w-2 scale-[1] rounded-lg bg-primary transition-all duration-300 group-hover:left-[0%] group-hover:top-[0%] group-hover:h-full group-hover:w-full group-hover:scale-[1.8] group-hover:bg-primary"></div>
+        {showBullet && (
+          <div className="absolute left-[20%] top-[40%] h-2 w-2 scale-[1] rounded-lg bg-primary transition-all duration-300 group-hover:left-[0%] group-hover:top-[0%] group-hover:h-full group-hover:w-full group-hover:scale-[1.8] group-hover:bg-primary"></div>
+        )}
       </button>
     );
   },

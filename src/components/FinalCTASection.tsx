@@ -35,6 +35,10 @@ const FinalCTASection: React.FC = () => {
         <div className="relative">
           <div className="gradient-hero p-8 md:p-12 rounded-2xl text-primary-foreground shadow-golden">
             <div className="text-center space-y-6">
+              {/* Availability Badge moved above title */}
+              <div className="inline-flex items-center justify-center px-4 py-1.5 rounded-full bg-red-600 text-white text-sm font-bold shadow-lg">
+                3/5 DISPONIBLES EN SEPTIEMBRE
+              </div>
               <div className="flex items-center justify-center gap-3 text-2xl md:text-3xl font-bold">
                 <Gift className="h-8 w-8 animate-bounce-gentle" />
                 ⚡ Cupos limitados
@@ -69,11 +73,7 @@ const FinalCTASection: React.FC = () => {
                   Reclamar Regalo
                 </span>
               </StarBorder>
-
-              {/* Availability Counter */}
-              <div className="bg-urgency text-urgency-foreground px-6 py-3 rounded-full inline-block font-bold text-lg shadow-lg">
-                3/5 DISPONIBLES EN SEPTIEMBRE
-              </div>
+              
             </div>
           </div>
 

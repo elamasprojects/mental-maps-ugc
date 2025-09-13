@@ -119,12 +119,12 @@ export default function EnhancedPricingSection() {
             timelineRef={pricingRef}
             customVariants={revealVariants}
           >
-            <div className="max-w-4xl mx-auto bg-card p-8 rounded-2xl shadow-elegant border border-primary/20">
-              <h3 className="text-xl md:text-2xl font-bold mb-6 text-foreground">
+            <div className="max-w-4xl mx-auto p-0 md:bg-card md:p-8 md:rounded-2xl md:shadow-elegant md:border md:border-primary/20">
+              <h3 className="text-lg md:text-2xl font-bold mb-3 md:mb-6 text-foreground">
                 Cada video incluye:
               </h3>
-              <div className="text-lg font-semibold text-center">
-                🎥 1 video editado con 2 hooks + 1 crudo con 2 hooks = <span className="gradient-text font-bold text-xl">4 piezas finales por video</span>
+              <div className="text-base md:text-lg font-semibold md:text-center">
+                🎥 1 video editado con 2 hooks + 1 crudo con 2 hooks = <span className="gradient-text font-bold text-lg md:text-xl">4 piezas finales por video</span>
               </div>
             </div>
           </TimelineContent>
