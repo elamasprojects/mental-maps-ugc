@@ -2,7 +2,7 @@ import React from 'react';
 import HeroSection from '../components/HeroSection';
 import CTASection from '../components/CTASection';
 import SocialProofSection from '../components/SocialProofSection';
-import PricingSection from '../components/PricingSection';
+import EnhancedPricingSection from '../components/ui/pricing-section-enhanced';
 import FinalCTASection from '../components/FinalCTASection';
 
 const Index: React.FC = () => {
@@ -11,7 +11,7 @@ const Index: React.FC = () => {
       <HeroSection />
       <CTASection />
       <SocialProofSection />
-      <PricingSection />
+      <EnhancedPricingSection />
       <FinalCTASection />
     </main>
   );

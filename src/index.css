@@ -40,9 +40,11 @@ All colors MUST be HSL. Golden gradient branding extracted from logo.
     --radius: 0.75rem;
 
     /* Mental Maps Custom Design Tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(51 100% 50%), hsl(39 100% 50%));
-    --gradient-hero: linear-gradient(135deg, hsl(51 100% 50%) 0%, hsl(39 100% 50%) 100%);
-    --gradient-cta: linear-gradient(135deg, hsl(45 100% 55%), hsl(35 100% 45%));
+    --gradient-primary: linear-gradient(135deg, #ffd700 0%, #d4af37 30%, #b8860b 70%, #8b7500 100%);
+    --gradient-hero: linear-gradient(135deg, #f4d03f 0%, #d4af37 50%, #b8860b 100%);
+    --gradient-cta: linear-gradient(135deg, #f1c40f 0%, #d4af37 50%, #8b7500 100%);
+    --gradient-text: linear-gradient(135deg, #ffd700 0%, #d4af37 50%, #8b7500 100%);
+    --gradient-golden: linear-gradient(135deg, #ffd700 0%, #d4af37 30%, #b8860b 70%, #8b7500 100%);
     
     --shadow-golden: 0 10px 30px -10px hsl(51 100% 50% / 0.3);
     --shadow-elegant: 0 20px 40px -15px hsl(0 0% 0% / 0.1);
@@ -127,7 +129,7 @@ All colors MUST be HSL. Golden gradient branding extracted from logo.
 
   /* Mental Maps Custom Styles */
   .gradient-text {
-    background: var(--gradient-primary);
+    background: var(--gradient-golden);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
