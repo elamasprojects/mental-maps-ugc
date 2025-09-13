@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, CardContent } from './ui/card';
-import { ExternalLink, Users, Clock } from 'lucide-react';
+import { ExternalLink, Users, Clock, Sparkles, CheckCircle } from 'lucide-react';
 import { Logos3 } from './ui/logos3';
 
 const SocialProofSection: React.FC = () => {
@@ -39,46 +39,50 @@ const SocialProofSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Examples Section */}
-        <div className="text-center space-y-8 bg-gradient-to-r from-card via-primary/5 to-card p-8 rounded-2xl shadow-elegant border border-primary/20">
-          <div className="inline-flex items-center gap-3 text-xl md:text-2xl font-bold text-foreground">
-            🔍 ¿Querés ver ejemplos realizados?
-          </div>
-          
-          <div className="bg-muted/30 p-6 rounded-xl border border-primary/10">
-            <p className="text-lg font-medium mb-4 text-foreground">
-              Accede a nuestro <span className="gradient-text font-bold">Portfolio Completo</span> con más de 500 videos UGC
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-muted-foreground mb-6">
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-success rounded-full"></span>
-                Videos para diferentes nichos
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-primary rounded-full"></span>
-                Formatos optimizados para ads
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-accent rounded-full"></span>
-                Casos de éxito reales
-              </div>
-            </div>
-          </div>
-          
-          <a
-            href="https://drive.google.com/drive/folders/1zKEXdEi5PKD3e6ktBPfpCECkr-jqvH8L?usp=sharing"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 gradient-cta text-primary-foreground px-8 py-4 rounded-xl font-bold text-lg hover:opacity-90 transition-all duration-300 shadow-golden hover:scale-105 border border-primary/30"
-          >
-            📁 Ver Portfolio Completo de Ejemplos
-            <ExternalLink className="h-5 w-5" />
-          </a>
-        </div>
-
         {/* Logos Carousel Section */}
         <div>
           <Logos3 heading="Empresas que confían en nosotros" />
+        </div>
+
+        {/* Examples Section (moved below carousel and redesigned) */}
+        <div className="relative text-center space-y-8 p-8 md:p-10 rounded-2xl border border-primary/30 bg-gradient-to-br from-primary/5 via-card to-accent/10 shadow-elegant overflow-hidden">
+          <div className="pointer-events-none absolute -top-10 -left-10 h-40 w-40 rounded-full bg-primary/20 blur-3xl"></div>
+          <div className="pointer-events-none absolute -bottom-10 -right-10 h-40 w-40 rounded-full bg-accent/20 blur-3xl"></div>
+
+          <div className="inline-flex items-center gap-3 text-xl md:text-2xl font-bold text-foreground">
+            <Sparkles className="h-6 w-6 text-primary" />
+            <span className="gradient-text">¿Querés ver ejemplos realizados?</span>
+          </div>
+
+          <div className="bg-card/60 backdrop-blur-sm p-6 rounded-xl border border-primary/20">
+            <p className="text-lg font-medium mb-6 text-foreground">
+              Accedé a nuestro <span className="gradient-text font-bold">Portfolio Completo</span> con más de 500 videos UGC
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-foreground/80 mb-6">
+              <div className="flex items-center gap-3 justify-center md:justify-start">
+                <CheckCircle className="h-5 w-5 text-success" />
+                <span>Videos para diferentes nichos</span>
+              </div>
+              <div className="flex items-center gap-3 justify-center md:justify-start">
+                <CheckCircle className="h-5 w-5 text-primary" />
+                <span>Formatos optimizados para ads</span>
+              </div>
+              <div className="flex items-center gap-3 justify-center md:justify-start">
+                <CheckCircle className="h-5 w-5 text-accent" />
+                <span>Casos de éxito reales</span>
+              </div>
+            </div>
+
+            <a
+              href="https://drive.google.com/drive/folders/1zKEXdEi5PKD3e6ktBPfpCECkr-jqvH8L?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 gradient-cta text-primary-foreground px-8 py-4 rounded-xl font-bold text-lg hover:opacity-90 transition-all duration-300 shadow-golden hover:scale-105 border border-primary/30"
+            >
+              📁 Ver Portfolio Completo de Ejemplos
+              <ExternalLink className="h-5 w-5" />
+            </a>
+          </div>
         </div>
 
         {/* Scarcity Section */}

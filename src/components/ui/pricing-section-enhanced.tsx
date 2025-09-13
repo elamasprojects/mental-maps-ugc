@@ -8,6 +8,7 @@ import NumberFlow from "@number-flow/react";
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
 import { CheckCircle, Users, MessageCircle } from "lucide-react";
+import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 
 const packages = [
   {
@@ -197,21 +198,22 @@ export default function EnhancedPricingSection() {
                     )}
                   </div>
 
-                  <motion.a
+                  <a
                     href={`https://api.whatsapp.com/send/?phone=5492346506111&text=${encodeURIComponent(`Hola, quiero recibir el formulario para avanzar con los videos UCC. Elegí el paquete ${pkg.name}`)}&type=phone_number&app_absent=0`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`w-full p-4 text-lg font-semibold rounded-xl transition-all duration-300 flex items-center justify-center gap-2 ${
-                      pkg.popular 
-                        ? 'gradient-cta text-primary-foreground hover:opacity-90 shadow-golden border border-primary/30' 
-                        : 'bg-gradient-to-r from-card to-muted border-2 border-primary/40 hover:border-primary hover:shadow-lg text-foreground hover:scale-105'
-                    }`}
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
+                    className="w-full"
                   >
-                    <MessageCircle className="h-5 w-5" />
-                    Elegir {pkg.name}
-                  </motion.a>
+                    <InteractiveHoverButton
+                      text={`Elegir ${pkg.name}`}
+                      className={cn(
+                        "w-full py-4 text-lg",
+                        pkg.popular
+                          ? "border-primary/40 bg-primary/10 text-foreground"
+                          : "border-primary/30 bg-card text-foreground",
+                      )}
+                    />
+                  </a>
                 </CardContent>
               </Card>
             </TimelineContent>

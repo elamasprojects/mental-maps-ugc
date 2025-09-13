@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from './ui/button';
 import { MessageCircle, Gift } from 'lucide-react';
+import { StarBorder } from '@/components/ui/star-border';
 
 const FinalCTASection: React.FC = () => {
   return (
@@ -16,22 +17,17 @@ const FinalCTASection: React.FC = () => {
             Escribime por WhatsApp y resolvemos todo:
           </p>
 
-          <Button
-            asChild
-            variant="default"
-            size="lg"
-            className="bg-green-600 hover:bg-green-700 text-white transition-all duration-300 shadow-elegant text-lg px-8 py-6 font-semibold"
+          <StarBorder as="a"
+            href="https://api.whatsapp.com/send/?phone=5492346506111&text=Hola%2C+quiero+recibir+el+formulario+para+avanzar+con+los+videos+UGC&type=phone_number&app_absent=0"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block"
           >
-            <a
-              href="https://api.whatsapp.com/send/?phone=5492346506111&text=Hola%2C+quiero+recibir+el+formulario+para+avanzar+con+los+videos+UGC&type=phone_number&app_absent=0"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3"
-            >
+            <span className="flex items-center gap-3">
               <MessageCircle className="h-5 w-5" />
               Resolver Dudas por WhatsApp
-            </a>
-          </Button>
+            </span>
+          </StarBorder>
         </div>
 
         {/* Special Offer */}
@@ -61,22 +57,17 @@ const FinalCTASection: React.FC = () => {
                 </p>
               </div>
 
-              <Button
-                asChild
-                variant="secondary"
-                size="lg"
-                className="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white border-white/30 hover:border-white/50 transition-all duration-300 shadow-lg text-lg px-8 py-6 font-semibold"
+              <StarBorder as="a"
+                href="https://api.whatsapp.com/send/?phone=5492346506111&text=Hola%20Gero.%20Vi%20el%20regalo%20al%20final%20de%20la%20p%C3%A1gina%20y%20lo%20quiero%20aprovechar.&type=phone_number&app_absent=0"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block"
               >
-                <a
-                  href="https://api.whatsapp.com/send/?phone=5492346506111&text=Regalo&type=phone_number&app_absent=0"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3"
-                >
+                <span className="flex items-center gap-3">
                   <MessageCircle className="h-5 w-5" />
                   Reclamar Regalo
-                </a>
-              </Button>
+                </span>
+              </StarBorder>
 
               {/* Availability Counter */}
               <div className="bg-urgency text-urgency-foreground px-6 py-3 rounded-full inline-block font-bold text-lg shadow-lg">
