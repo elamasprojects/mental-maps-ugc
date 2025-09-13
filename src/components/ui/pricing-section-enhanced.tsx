@@ -18,7 +18,7 @@ const packages = [
     total: "40 piezas finales",
     creators: "de 1 a 5 creadores",
     popular: false,
-    installments: null
+    installments: "SE REALIZA EN UN SOLO PLAZO"
   },
   {
     name: "Paquete Growth",
@@ -139,7 +139,7 @@ export default function EnhancedPricingSection() {
               customVariants={revealVariants}
             >
               <Card
-                className={`relative transition-all duration-300 hover:scale-105 shadow-elegant ${
+                className={`relative transition-all duration-300 hover:scale-105 shadow-elegant h-full flex flex-col ${
                   pkg.popular 
                     ? 'border-2 border-primary shadow-golden transform scale-105 bg-gradient-to-b from-card via-card/95 to-primary/5' 
                     : 'border border-border hover:border-primary/50 bg-card'
@@ -176,8 +176,8 @@ export default function EnhancedPricingSection() {
                   </div>
                 </CardHeader>
 
-                <CardContent className="space-y-6">
-                  <div className="space-y-4">
+                <CardContent className="space-y-6 flex flex-col flex-1">
+                  <div className="space-y-4 flex-1">
                     <div className="flex items-center gap-3">
                       <CheckCircle className="h-5 w-5 text-success flex-shrink-0" />
                       <span className="font-semibold">Total: {pkg.total}</span>
@@ -198,7 +198,7 @@ export default function EnhancedPricingSection() {
                   </div>
 
                   <motion.a
-                    href="https://api.whatsapp.com/send/?phone=5492346506111&text=Hola%2C+quiero+recibir+el+formulario+para+avanzar+con+los+videos+UGC&type=phone_number&app_absent=0"
+                    href={`https://api.whatsapp.com/send/?phone=5492346506111&text=${encodeURIComponent(`Hola, quiero recibir el formulario para avanzar con los videos UCC. Elegí el paquete ${pkg.name}`)}&type=phone_number&app_absent=0`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`w-full p-4 text-lg font-semibold rounded-xl transition-all duration-300 flex items-center justify-center gap-2 ${

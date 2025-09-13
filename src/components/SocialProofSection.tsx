@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, CardContent } from './ui/card';
 import { ExternalLink, Users, Clock } from 'lucide-react';
+import { Logos3 } from './ui/logos3';
 
 const SocialProofSection: React.FC = () => {
   return (
@@ -15,24 +16,20 @@ const SocialProofSection: React.FC = () => {
           </h2>
 
           {/* Testimonials Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4 mt-12 max-w-6xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4 mt-12 max-w-6xl mx-auto">
             {[
-              { id: 1, src: "/testimonios/testimonio1.jpg", alt: "Testimonio creadora UGC 1" },
-              { id: 2, src: "/testimonios/testimonio2.jpg", alt: "Testimonio creador UGC 2" },
-              { id: 3, src: "/testimonios/testimonio3.jpg", alt: "Testimonio marca exitosa 3" },
-              { id: 4, src: "/testimonios/testimonio4.jpg", alt: "Testimonio creador UGC 4" },
               { id: 5, src: "/testimonios/testimonio5.jpeg", alt: "Testimonio conversación WhatsApp cliente satisfecho" },
               { id: 6, src: "/testimonios/testimonio6.png", alt: "Testimonio feedback positivo de marca" },
               { id: 7, src: "/testimonios/testimonio7.jpeg", alt: "Testimonio entrega rápida de videos UGC" },
               { id: 8, src: "/testimonios/testimonio8.jpeg", alt: "Testimonio calidad del servicio UGC" }
             ].map((testimonial) => (
-              <Card key={testimonial.id} className="border-2 border-primary/20 hover:border-primary/40 transition-colors duration-300 shadow-elegant">
-                <CardContent className="p-2">
-                  <div className="aspect-square rounded-lg overflow-hidden">
+              <Card key={testimonial.id} className="border-0 shadow-none bg-transparent">
+                <CardContent className="p-0">
+                  <div className="aspect-[9/16] rounded-lg overflow-hidden">
                     <img 
                       src={testimonial.src} 
                       alt={testimonial.alt}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      className="w-full h-full object-contain"
                       loading="lazy"
                     />
                   </div>
@@ -77,6 +74,11 @@ const SocialProofSection: React.FC = () => {
             📁 Ver Portfolio Completo de Ejemplos
             <ExternalLink className="h-5 w-5" />
           </a>
+        </div>
+
+        {/* Logos Carousel Section */}
+        <div>
+          <Logos3 heading="Empresas que confían en nosotros" />
         </div>
 
         {/* Scarcity Section */}
