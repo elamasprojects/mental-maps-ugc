@@ -3,7 +3,7 @@ import logo from '../assets/logo.jpg';
 
 const HeroSection: React.FC = () => {
   return (
-    <section className="min-h-screen bg-background flex flex-col">
+    <section className="bg-background flex flex-col">
       {/* Header (hidden on all viewports) */}
       <header className="hidden w-full py-4 px-6 md:px-8 border-b border-border">
         <div className="max-w-7xl mx-auto flex items-center">
@@ -16,10 +16,10 @@ const HeroSection: React.FC = () => {
       </header>
 
       {/* Hero Content */}
-      <div className="flex-1 flex items-center justify-center px-6 md:px-8 py-12">
+      <div className="flex-1 flex items-start md:items-center justify-center px-6 md:px-8 pt-4 pb-4 md:pt-8 md:pb-10">
         <div className="max-w-5xl mx-auto text-center space-y-8">
           {/* Centered Logo */}
-          <div className="flex justify-center">
+          <div className="flex justify-center mt-2 md:mt-0">
             <img
               src={logo}
               alt="Mental Maps Consultora"

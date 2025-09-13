@@ -5,7 +5,7 @@ import { StarBorder } from '@/components/ui/star-border';
 
 const CTASection: React.FC = () => {
   return (
-    <section className="py-16 md:py-24 px-6 md:px-8 bg-muted/50">
+    <section className="pt-8 pb-12 md:py-20 px-6 md:px-8 bg-muted/50">
       <div className="max-w-4xl mx-auto text-center space-y-8">
         {/* Main CTA Text */}
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground">
