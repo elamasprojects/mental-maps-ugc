@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from './ui/button';
 import { Calendar, MessageCircle } from 'lucide-react';
+import { StarBorder } from '@/components/ui/star-border';
 
 const CTASection: React.FC = () => {
   return (
@@ -34,22 +35,18 @@ const CTASection: React.FC = () => {
             </a>
           </Button>
 
-          <Button
-            asChild
-            variant="secondary"
-            size="lg"
-            className="bg-green-600 hover:bg-green-700 text-white border-0 transition-all duration-300 shadow-elegant text-lg px-8 py-6 w-full sm:w-auto font-semibold"
+          <StarBorder as="a"
+            color="hsl(var(--primary))"
+            href="https://api.whatsapp.com/send/?phone=5492346506111&text=Hola%2C+quiero+recibir+el+formulario+para+avanzar+con+los+videos+UGC&type=phone_number&app_absent=0"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full sm:w-auto"
           >
-            <a
-              href="https://api.whatsapp.com/send/?phone=5492346506111&text=Hola%2C+quiero+recibir+el+formulario+para+avanzar+con+los+videos+UGC&type=phone_number&app_absent=0"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3"
-            >
+            <span className="flex items-center gap-3 text-foreground font-semibold text-lg px-8">
               <MessageCircle className="h-5 w-5" />
               WhatsApp
-            </a>
-          </Button>
+            </span>
+          </StarBorder>
         </div>
 
         {/* Additional emphasis */}

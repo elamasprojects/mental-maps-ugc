@@ -18,6 +18,7 @@ const FinalCTASection: React.FC = () => {
           </p>
 
           <StarBorder as="a"
+            color="hsl(var(--primary))"
             href="https://api.whatsapp.com/send/?phone=5492346506111&text=Hola%2C+quiero+recibir+el+formulario+para+avanzar+con+los+videos+UGC&type=phone_number&app_absent=0"
             target="_blank"
             rel="noopener noreferrer"

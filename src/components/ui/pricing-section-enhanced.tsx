@@ -206,6 +206,7 @@ export default function EnhancedPricingSection() {
                   >
                     <InteractiveHoverButton
                       text={`Elegir ${pkg.name}`}
+                      showBullet={false}
                       className={cn(
                         "w-full py-4 text-lg",
                         pkg.popular
