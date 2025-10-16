@@ -142,7 +142,7 @@ export default function EnhancedPricingSection() {
               <Card
                 className={`relative transition-all duration-300 hover:scale-105 shadow-elegant h-full flex flex-col ${
                   pkg.popular 
-                    ? 'border-2 border-primary shadow-golden transform scale-105 bg-gradient-to-b from-card via-card/95 to-primary/5' 
+                    ? 'border-0 shadow-golden transform scale-105 bg-gradient-to-b from-violet-600 via-violet-700 to-indigo-700 text-white' 
                     : 'border border-border hover:border-primary/50 bg-card'
                 }`}
               >
@@ -160,15 +160,15 @@ export default function EnhancedPricingSection() {
                   </div>
                   <div className="space-y-3">
                     <div className="flex items-baseline justify-center gap-2">
-                      <span className="text-xl font-medium text-muted-foreground">USD</span>
+                      <span className={`text-xl font-medium ${pkg.popular ? 'text-white/80' : 'text-muted-foreground'}`}>USD</span>
                       <NumberFlow
                         value={pkg.price}
-                        className="text-3xl md:text-4xl font-bold text-foreground"
+                        className={`${pkg.popular ? 'text-5xl md:text-6xl font-extrabold text-white' : 'text-4xl md:text-5xl font-bold text-foreground'}`}
                       />
-                      <span className="text-lg font-medium text-muted-foreground">por video</span>
+                      <span className={`text-lg font-medium ${pkg.popular ? 'text-white/80' : 'text-muted-foreground'}`}>por video</span>
                     </div>
                     <div className="text-2xl md:text-3xl font-extrabold">
-                      <span className="px-3 py-1 rounded-md bg-primary/10 text-foreground border border-primary/30 inline-block">
+                      <span className={`px-3 py-1 rounded-md inline-block border ${pkg.popular ? 'bg-white/10 border-white/20 text-white' : 'bg-primary/10 text-foreground border-primary/30'}`}>
                         <NumberFlow
                           value={pkg.totalPrice}
                           prefix="USD "
@@ -182,18 +182,18 @@ export default function EnhancedPricingSection() {
                 <CardContent className="space-y-6 flex flex-col flex-1">
                   <div className="space-y-4 flex-1">
                     <div className="flex items-center gap-3">
-                      <CheckCircle className="h-5 w-5 text-success flex-shrink-0" />
+                      <span className={`h-2 w-2 rounded-full ${pkg.popular ? 'bg-white' : 'bg-primary'}`}></span>
                       <span className="font-semibold">Total: {pkg.total}</span>
                     </div>
                     
                     <div className="flex items-center gap-3">
-                      <Users className="h-5 w-5 text-primary flex-shrink-0" />
+                      <span className={`h-2 w-2 rounded-full ${pkg.popular ? 'bg-white' : 'bg-primary'}`}></span>
                       <span>Incluye {pkg.creators}</span>
                     </div>
 
                     {pkg.installments && (
-                      <div className="bg-accent/20 p-4 rounded-lg border border-accent/30">
-                        <p className="text-sm font-medium text-foreground">
+                      <div className={`${pkg.popular ? 'bg-white/10 border-white/20' : 'bg-accent/20 border-accent/30'} p-4 rounded-lg border`}>
+                        <p className={`text-sm font-medium ${pkg.popular ? 'text-white' : 'text-foreground'}`}>
                           <strong>{pkg.installments}</strong>
                         </p>
                       </div>
@@ -212,7 +212,7 @@ export default function EnhancedPricingSection() {
                       className={cn(
                         "w-full py-4 text-lg",
                         pkg.popular
-                          ? "border-primary/40 bg-primary/10 text-foreground"
+                          ? "bg-white text-violet-700 border-white/20"
                           : "border-primary/30 bg-card text-foreground",
                       )}
                     />
