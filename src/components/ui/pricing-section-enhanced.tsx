@@ -167,12 +167,14 @@ export default function EnhancedPricingSection() {
                       />
                       <span className="text-lg font-medium text-muted-foreground">por video</span>
                     </div>
-                    <div className="text-2xl md:text-3xl font-bold gradient-text">
-                      <NumberFlow
-                        value={pkg.totalPrice}
-                        prefix="USD "
-                        className="gradient-text"
-                      />
+                    <div className="text-2xl md:text-3xl font-extrabold">
+                      <span className="px-3 py-1 rounded-md bg-primary/10 text-foreground border border-primary/30 inline-block">
+                        <NumberFlow
+                          value={pkg.totalPrice}
+                          prefix="USD "
+                          className="[&>*]:!text-current"
+                        />
+                      </span>
                     </div>
                   </div>
                 </CardHeader>
@@ -221,9 +223,40 @@ export default function EnhancedPricingSection() {
           ))}
         </div>
 
-        {/* Additional Benefits */}
+        {/* Custom Horizontal Plan */}
         <TimelineContent
           animationNum={6}
+          timelineRef={pricingRef}
+          customVariants={revealVariants}
+        >
+          <div className="max-w-6xl mx-auto">
+            <Card className="border border-primary/30 bg-card/60 backdrop-blur-sm shadow-elegant overflow-hidden">
+              <div className="flex flex-col md:flex-row items-center justify-between gap-6 p-6">
+                <div className="text-center md:text-left">
+                  <div className="text-2xl md:text-3xl font-extrabold">Custom</div>
+                  <p className="text-muted-foreground mt-1">Paquetes a medida para necesidades específicas.</p>
+                </div>
+                <div className="flex-1" />
+                <a
+                  href={`https://api.whatsapp.com/send/?phone=5492346506111&text=${encodeURIComponent('Hola, me interesa un paquete Custom. ¿Podemos conversar detalles?')}&type=phone_number&app_absent=0`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full md:w-auto"
+                >
+                  <InteractiveHoverButton
+                    text="Contactarme para más detalles"
+                    showBullet={false}
+                    className="px-6 py-4 text-lg border-primary/40 bg-primary/10 text-foreground w-full"
+                  />
+                </a>
+              </div>
+            </Card>
+          </div>
+        </TimelineContent>
+
+        {/* Additional Benefits */}
+        <TimelineContent
+          animationNum={7}
           timelineRef={pricingRef}
           customVariants={revealVariants}
         >
