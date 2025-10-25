@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, CardContent } from './ui/card';
 import { ExternalLink, Users, Clock, Sparkles, CheckCircle } from 'lucide-react';
 import { Logos3 } from './ui/logos3';
+import TestimonialAudioCard from './ui/testimonial-audio-card';
 
 const SocialProofSection: React.FC = () => {
   return (
@@ -38,12 +39,14 @@ const SocialProofSection: React.FC = () => {
               </Card>
             ))}
           </div>
-          <div className="max-w-md mx-auto mt-8 w-full">
-            <audio controls preload="none" className="w-full">
-              <source src="/testimonios/audio1.opus" type="audio/ogg; codecs=opus" />
-              <source src="/testimonios/audio1.opus" type="audio/webm; codecs=opus" />
-              Tu navegador no soporta la reproducción de audio.
-            </audio>
+          <div className="max-w-xl mx-auto mt-8 w-full">
+            <TestimonialAudioCard
+              audioSrc="/testimonios/audio1.opus"
+              personName=""
+              roleCompany="Treinta App | Directora de Marketing"
+              description="Excelente coordinación y tiempos de entrega. Los videos cumplieron con lo que necesitábamos para performance."
+              logoSrc="/clientes/audiologo.png"
+            />
           </div>
         </div>
 
