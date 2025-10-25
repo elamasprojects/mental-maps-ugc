@@ -21,7 +21,8 @@ const SocialProofSection: React.FC = () => {
               { id: 5, src: "/testimonios/testimonio5.jpeg", alt: "Testimonio conversación WhatsApp cliente satisfecho" },
               { id: 6, src: "/testimonios/testimonio6.png", alt: "Testimonio feedback positivo de marca" },
               { id: 7, src: "/testimonios/testimonio7.jpeg", alt: "Testimonio entrega rápida de videos UGC" },
-              { id: 8, src: "/testimonios/testimonio8.jpeg", alt: "Testimonio calidad del servicio UGC" }
+              { id: 8, src: "/testimonios/testimonio8.jpeg", alt: "Testimonio calidad del servicio UGC" },
+              { id: 9, src: "/testimonios/testimonio9.jpg", alt: "Testimonio adicional satisfacción del cliente" }
             ].map((testimonial) => (
               <Card key={testimonial.id} className="border-0 shadow-none bg-transparent">
                 <CardContent className="p-0">
@@ -36,6 +37,13 @@ const SocialProofSection: React.FC = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+          <div className="max-w-md mx-auto mt-8 w-full">
+            <audio controls preload="none" className="w-full">
+              <source src="/testimonios/audio1.opus" type="audio/ogg; codecs=opus" />
+              <source src="/testimonios/audio1.opus" type="audio/webm; codecs=opus" />
+              Tu navegador no soporta la reproducción de audio.
+            </audio>
           </div>
         </div>
 

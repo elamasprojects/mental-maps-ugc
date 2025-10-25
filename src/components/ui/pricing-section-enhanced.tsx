@@ -14,8 +14,8 @@ const packages = [
   {
     name: "Paquete Starter",
     videos: "10 videos",
-    price: 79,
-    totalPrice: 790,
+    price: 59,
+    totalPrice: 590,
     total: "40 piezas finales",
     creators: "de 1 a 5 creadores",
     popular: false,
