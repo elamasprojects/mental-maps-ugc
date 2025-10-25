@@ -16,7 +16,7 @@ const SocialProofSection: React.FC = () => {
           </h2>
 
           {/* Testimonials Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4 mt-12 max-w-6xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-12 max-w-6xl mx-auto">
             {[
               { id: 5, src: "/testimonios/testimonio5.jpeg", alt: "Testimonio conversación WhatsApp cliente satisfecho" },
               { id: 6, src: "/testimonios/testimonio6.png", alt: "Testimonio feedback positivo de marca" },
