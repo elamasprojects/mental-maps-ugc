@@ -8,7 +8,7 @@ const PricingSection: React.FC = () => {
     {
       name: "Paquete Starter",
       videos: "10 videos",
-      price: "USD 79 por video | 790 USD",
+      price: "USD 59 por video | 590 USD",
       total: "40 piezas finales",
       creators: "de 1 a 5 creadores",
       popular: false,
