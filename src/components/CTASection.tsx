@@ -2,6 +2,7 @@ import React from 'react';
 import { Button } from './ui/button';
 import { Calendar, MessageCircle } from 'lucide-react';
 import { StarBorder } from '@/components/ui/star-border';
+import { trackFacebookEvent } from '@/lib/utils';
 
 const CTASection: React.FC = () => {
   return (
@@ -23,6 +24,7 @@ const CTASection: React.FC = () => {
             variant="default"
             size="lg"
             className="gradient-cta text-primary-foreground hover:opacity-90 transition-all duration-300 shadow-golden text-lg px-8 py-6 w-full sm:w-auto font-semibold"
+            onClick={() => trackFacebookEvent('Schedule')}
           >
             <a
               href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3MpbAJzSWhU6Ixucb9UOaYPl0rXSrP1fSoc7N5zadqTUYp0VdrzX4VQCinkuVSoReLY_0xC9bh"
