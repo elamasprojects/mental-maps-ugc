@@ -219,28 +219,25 @@ const BetaProductAnnouncement = () => {
                 </div>
               </div>
 
-              {/* Pricing Section */}
+              {/* Pricing Section - COMMENTED OUT */}
+              {/* 
               <div className="text-center space-y-4 bg-gradient-to-r from-violet-500/10 via-purple-500/10 to-blue-500/10 p-6 md:p-8 rounded-2xl border border-violet-500/20">
                 <div className="space-y-3">
                   <p className="text-lg md:text-xl text-muted-foreground font-medium">
                     Precio de lanzamiento especial
                   </p>
                   
-                  {/* Price comparison */}
                   <div className="space-y-1">
-                    {/* Original price - crossed out */}
                     <div className="flex items-baseline justify-center gap-2">
                       <span className="text-2xl md:text-3xl font-bold text-muted-foreground line-through opacity-60">
                         $34
                       </span>
                       <span className="text-sm md:text-base font-medium text-muted-foreground opacity-60">USD por video</span>
-                      {/* % OFF Badge */}
                       <span className="inline-flex items-center px-2 py-1 rounded-md bg-red-600 text-white text-xs md:text-sm font-bold">
                         -44% OFF
                       </span>
                     </div>
                     
-                    {/* Current discounted price */}
                     <div className="flex items-baseline justify-center gap-3">
                       <span className="text-5xl md:text-6xl lg:text-7xl font-extrabold bg-gradient-to-r from-violet-600 to-blue-600 bg-clip-text text-transparent">
                         $19
@@ -257,6 +254,7 @@ const BetaProductAnnouncement = () => {
                   </div>
                 </div>
               </div>
+              */}
 
               {/* CTA Section */}
               <div className="text-center space-y-6 pt-4">

@@ -25,6 +25,7 @@ const defaultLogos: Logo[] = [
   { id: "cliente-4", description: "Cliente 4", image: "/clientes/4.png", className: "h-12 sm:h-16 md:h-20 lg:h-24 w-auto object-contain" },
   { id: "cliente-5", description: "Cliente 5", image: "/clientes/5.jpg", className: "h-12 sm:h-16 md:h-20 lg:h-24 w-auto object-contain" },
   { id: "cliente-7", description: "Cliente 7", image: "/clientes/7.png", className: "h-12 sm:h-16 md:h-20 lg:h-24 w-auto object-contain" },
+  { id: "cliente-8", description: "Cliente 8", image: "/clientes/8.jpg", className: "h-12 sm:h-16 md:h-20 lg:h-24 w-auto object-contain" },
 ];
 
 const Logos3: React.FC<Logos3Props> = ({
@@ -46,7 +47,7 @@ const Logos3: React.FC<Logos3Props> = ({
                 <img
                   src={logo.image}
                   alt={logo.description}
-                  className={cn("max-h-full w-auto max-w-[330px] object-contain animate-logo-sway", logo.className)}
+                  className={cn("max-h-full w-auto max-w-[330px] object-contain", logo.className)}
                 />
               </div>
             ))}

@@ -38,7 +38,7 @@ const HeroSection: React.FC = () => {
           {/* Subtitle */}
           <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-muted-foreground max-w-4xl mx-auto leading-relaxed">
             <strong>Creamos 10-100 videos UGC con{' '}
-            <span className="gradient-text font-bold">creadores de todo LATAM</span>{' '}
+            <span className="gradient-text font-bold">creadores en español, inglés y portugués</span>{' '}
             en 7 a 14 días</strong>
           </h2>
 

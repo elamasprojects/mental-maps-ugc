@@ -4,6 +4,7 @@ import CTASection from '../components/CTASection';
 import SocialProofSection from '../components/SocialProofSection';
 import EnhancedPricingSection from '../components/ui/pricing-section-enhanced';
 import BetaProductAnnouncement from '../components/BetaProductAnnouncement';
+import CreatorsBrandsSection from '../components/CreatorsBrandsSection';
 import FinalCTASection from '../components/FinalCTASection';
 import Footer from '../components/Footer';
 
@@ -15,6 +16,7 @@ const Index: React.FC = () => {
       <SocialProofSection />
       <EnhancedPricingSection />
       <BetaProductAnnouncement />
+      <CreatorsBrandsSection />
       <FinalCTASection />
       <Footer />
     </main>
