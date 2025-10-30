@@ -260,7 +260,7 @@ const BetaProductAnnouncement = () => {
               <div className="text-center space-y-6 pt-4">
                 <div className="flex flex-col items-center gap-4">
                   <a
-                    href={`https://api.whatsapp.com/send/?phone=5492346506111&text=${encodeURIComponent('Hola! Me interesa el pre-lanzamiento de UGC con IA a $19 por video. Quiero ser de los primeros en probarlo.')}&type=phone_number&app_absent=0`}
+                    href={`https://api.whatsapp.com/send/?phone=5492346506111&text=${encodeURIComponent('Hola! Me interesa el pre-lanzamiento de UGC con IA! Quiero ser de los primeros en probarlo')}&type=phone_number&app_absent=0`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-block"
