@@ -128,28 +128,94 @@ const BetaProductAnnouncement = () => {
                 </p>
               </div>
 
-              {/* Video Section */}
-              <div className="max-w-3xl mx-auto">
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-violet-500/20">
-                  <video
-                    ref={videoRef}
-                    className="w-full h-auto"
-                    controls
-                    preload="metadata"
-                    poster={posterDataUrl || "/placeholder.svg"}
-                    playsInline
-                    controlsList="nodownload"
-                    onLoadedMetadata={handleLoadedMetadata}
-                    onSeeked={handleSeeked}
-                  >
-                    <source src="/ugc_prueba/Ahorra%20hasta%2030%25%20en%20tu%20seguro%20de%20auto%20en%205%20minutos.mp4" type="video/mp4" />
-                    Tu navegador no soporta el elemento de video.
-                  </video>
-                  
-                  {/* Video overlay badge */}
-                  <div className="absolute top-4 left-4 bg-black/70 text-white px-3 py-1.5 rounded-lg text-xs md:text-sm font-semibold">
-                    📹 Video de Muestra - Creado con IA
+              {/* Video + Benefits Section (side by side on desktop) */}
+              <div className="grid grid-cols-1 md:grid-cols-[1.2fr_auto_1.2fr] gap-6 md:gap-10 lg:gap-12 items-center max-w-7xl mx-auto">
+                {/* Left Benefits (first 2) */}
+                <div className="hidden md:flex flex-col gap-5 lg:gap-6 justify-center">
+                  {benefits.slice(0, 2).map((benefit, index) => (
+                    <motion.div
+                      key={index}
+                      className="flex items-start gap-4 p-5 lg:p-6 bg-card/50 rounded-xl border border-border/50 hover:border-violet-500/50 transition-all shadow-sm hover:shadow-md"
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1 }}
+                    >
+                      <div className="flex-shrink-0 mt-1">
+                        {benefit.icon}
+                      </div>
+                      <p className="font-semibold text-foreground text-sm lg:text-base leading-relaxed">
+                        {benefit.text}
+                      </p>
+                    </motion.div>
+                  ))}
+                </div>
+
+                {/* Video Section */}
+                <div className="w-full md:w-auto md:mx-0">
+                  <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-violet-500/20 max-w-md mx-auto md:max-w-[340px] lg:max-w-[360px]">
+                    <video
+                      ref={videoRef}
+                      className="w-full h-auto"
+                      controls
+                      preload="metadata"
+                      poster={posterDataUrl || "/placeholder.svg"}
+                      playsInline
+                      controlsList="nodownload"
+                      onLoadedMetadata={handleLoadedMetadata}
+                      onSeeked={handleSeeked}
+                    >
+                      <source src="/ugc_prueba/Ahorra%20hasta%2030%25%20en%20tu%20seguro%20de%20auto%20en%205%20minutos.mp4" type="video/mp4" />
+                      Tu navegador no soporta el elemento de video.
+                    </video>
+                    
+                    {/* Video overlay badge */}
+                    <div className="absolute top-4 left-4 bg-black/70 text-white px-3 py-1.5 rounded-lg text-xs md:text-sm font-semibold">
+                      📹 Video de Muestra - Creado con IA
+                    </div>
                   </div>
+                </div>
+
+                {/* Right Benefits (last 2) */}
+                <div className="hidden md:flex flex-col gap-5 lg:gap-6 justify-center">
+                  {benefits.slice(2, 4).map((benefit, index) => (
+                    <motion.div
+                      key={index + 2}
+                      className="flex items-start gap-4 p-5 lg:p-6 bg-card/50 rounded-xl border border-border/50 hover:border-violet-500/50 transition-all shadow-sm hover:shadow-md"
+                      initial={{ opacity: 0, x: 20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1 }}
+                    >
+                      <div className="flex-shrink-0 mt-1">
+                        {benefit.icon}
+                      </div>
+                      <p className="font-semibold text-foreground text-sm lg:text-base leading-relaxed">
+                        {benefit.text}
+                      </p>
+                    </motion.div>
+                  ))}
+                </div>
+
+                {/* Mobile Benefits (all 4 in grid) */}
+                <div className="grid grid-cols-1 gap-4 md:hidden col-span-full">
+                  {benefits.map((benefit, index) => (
+                    <motion.div
+                      key={index}
+                      className="flex items-start gap-3 p-4 bg-card/50 rounded-xl border border-border/50 hover:border-violet-500/50 transition-all"
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1 }}
+                    >
+                      <div className="flex-shrink-0 mt-0.5">
+                        {benefit.icon}
+                      </div>
+                      <p className="font-semibold text-foreground text-sm md:text-base">
+                        {benefit.text}
+                      </p>
+                    </motion.div>
+                  ))}
                 </div>
               </div>
 
@@ -165,9 +231,13 @@ const BetaProductAnnouncement = () => {
                     {/* Original price - crossed out */}
                     <div className="flex items-baseline justify-center gap-2">
                       <span className="text-2xl md:text-3xl font-bold text-muted-foreground line-through opacity-60">
-                        $32
+                        $34
                       </span>
                       <span className="text-sm md:text-base font-medium text-muted-foreground opacity-60">USD por video</span>
+                      {/* % OFF Badge */}
+                      <span className="inline-flex items-center px-2 py-1 rounded-md bg-red-600 text-white text-xs md:text-sm font-bold">
+                        -44% OFF
+                      </span>
                     </div>
                     
                     {/* Current discounted price */}
@@ -186,27 +256,6 @@ const BetaProductAnnouncement = () => {
                     </p>
                   </div>
                 </div>
-              </div>
-
-              {/* Benefits Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-                {benefits.map((benefit, index) => (
-                  <motion.div
-                    key={index}
-                    className="flex items-start gap-3 p-4 bg-card/50 rounded-xl border border-border/50 hover:border-violet-500/50 transition-all"
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                  >
-                    <div className="flex-shrink-0 mt-0.5">
-                      {benefit.icon}
-                    </div>
-                    <p className="font-semibold text-foreground text-sm md:text-base">
-                      {benefit.text}
-                    </p>
-                  </motion.div>
-                ))}
               </div>
 
               {/* CTA Section */}
