@@ -266,7 +266,7 @@ const BetaProductAnnouncement = () => {
                     className="inline-block"
                   >
                     <ButtonColorful
-                      label="Solicitar videos UGC con IA (por ahora con descuento)"
+                      label="Solicitar videos UGC con IA"
                       className="h-12 px-8 text-base md:text-lg font-bold"
                     />
                   </a>
@@ -278,7 +278,7 @@ const BetaProductAnnouncement = () => {
                     transition={{ repeat: Infinity, duration: 2 }}
                   >
                     <TriangleAlert className="h-3 w-3" />
-                    Este descuento termina muy pronto
+                    El descuento aplica solo para los primeros 10 usuarios
                   </motion.div>
                 </div>
               </div>
