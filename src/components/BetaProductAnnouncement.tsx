@@ -3,11 +3,37 @@ import { Card } from "@/components/ui/card";
 import { ButtonColorful } from "@/components/ui/button-colorful";
 import { CheckCircle, Sparkles, Clock, TriangleAlert, TrendingDown, Zap, Video } from "lucide-react";
 import { motion } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { TimelineContent } from "@/components/ui/timeline-animation";
 
 const BetaProductAnnouncement = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [posterDataUrl, setPosterDataUrl] = useState<string | undefined>();
+
+  const handleLoadedMetadata = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    try {
+      const targetTime = Math.min(0.1, video.duration ? video.duration * 0.01 : 0.1);
+      video.currentTime = isFinite(targetTime) ? targetTime : 0;
+    } catch {}
+  };
+
+  const handleSeeked = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    const canvas = document.createElement("canvas");
+    canvas.width = video.videoWidth || 1280;
+    canvas.height = video.videoHeight || 720;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+    try {
+      const dataUrl = canvas.toDataURL("image/jpeg", 0.85);
+      setPosterDataUrl(dataUrl);
+    } catch {}
+  };
 
   const revealVariants = {
     visible: (i: number) => ({
@@ -106,12 +132,15 @@ const BetaProductAnnouncement = () => {
               <div className="max-w-3xl mx-auto">
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-violet-500/20">
                   <video
+                    ref={videoRef}
                     className="w-full h-auto"
                     controls
                     preload="metadata"
-                    poster="/placeholder.svg"
+                    poster={posterDataUrl || "/placeholder.svg"}
                     playsInline
                     controlsList="nodownload"
+                    onLoadedMetadata={handleLoadedMetadata}
+                    onSeeked={handleSeeked}
                   >
                     <source src="/ugc_prueba/Ahorra%20hasta%2030%25%20en%20tu%20seguro%20de%20auto%20en%205%20minutos.mp4" type="video/mp4" />
                     Tu navegador no soporta el elemento de video.
