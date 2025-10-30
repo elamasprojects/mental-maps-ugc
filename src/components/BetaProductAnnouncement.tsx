@@ -58,7 +58,7 @@ const BetaProductAnnouncement = () => {
   const benefits = [
     {
       icon: <TrendingDown className="h-5 w-5 text-green-500" />,
-      text: "68% más económico que UGC tradicional"
+      text: "50% más económico en promedio que UGC tradicional"
     },
     {
       icon: <Zap className="h-5 w-5 text-yellow-500" />,
