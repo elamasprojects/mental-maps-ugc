@@ -266,7 +266,7 @@ const BetaProductAnnouncement = () => {
                     className="inline-block"
                   >
                     <ButtonColorful
-                      label="Solicitar videos con IA con descuento"
+                      label="Solicitar videos UGC con IA (por ahora con descuento)"
                       className="h-12 px-8 text-base md:text-lg font-bold"
                     />
                   </a>
