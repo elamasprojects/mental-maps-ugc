@@ -21,7 +21,8 @@ const CreatorsBrandsSection: React.FC = () => {
               { id: 6, src: "/testimonios/testimonio6.png", alt: "Testimonio feedback positivo de marca" },
               { id: 7, src: "/testimonios/testimonio7.jpeg", alt: "Testimonio entrega rápida de videos UGC" },
               { id: 8, src: "/testimonios/testimonio8.jpeg", alt: "Testimonio calidad del servicio UGC" },
-              { id: 9, src: "/testimonios/testimonio9.jpg", alt: "Testimonio adicional satisfacción del cliente" }
+              { id: 9, src: "/testimonios/testimonio9.jpg", alt: "Testimonio adicional satisfacción del cliente" },
+              { id: 10, src: "/testimonios/testimonio10.jpg", alt: "Nuevo testimonio de cliente satisfecho" }
             ].map((testimonial) => (
               <Card key={testimonial.id} className="border-0 shadow-none bg-transparent">
                 <CardContent className="p-0">
